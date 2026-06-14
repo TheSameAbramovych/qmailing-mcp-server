@@ -57,7 +57,7 @@ Desktop, Cursor, Continue, Zed, and any CLI MCP client.
 
 ### Requirements
 
-- A QMailing account on the **PLUS** tier or higher (the public API is gated on PLUS+).
+- A QMailing account on the **PLUS** tier or higher (the public API is gated on PLUS).
 - Node.js **18.17 or later**.
 
 ### Setup
