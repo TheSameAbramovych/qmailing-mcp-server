@@ -181,8 +181,9 @@ npm run build
 QMAILING_API_TOKEN=qm_live_test_token npm start
 ```
 
-For bug reports or questions, reach us through the contact form at
-[qmailing.com/contact](https://qmailing.com/contact).
+For bug reports, open an issue on
+[GitHub](https://github.com/TheSameAbramovych/qmailing-mcp-server/issues).
+For anything else, email [support@qmailing.com](mailto:support@qmailing.com).
 
 ## License
 
