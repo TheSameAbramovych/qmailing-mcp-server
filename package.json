@@ -1,0 +1,54 @@
+{
+  "name": "@qmailing/mcp-server",
+  "version": "0.3.0",
+  "mcpName": "com.qmailing/mcp-server",
+  "description": "Model Context Protocol server for qmailing — lets AI agents (Claude Desktop, Cursor, Continue, ...) read and modify mailboxes, custom domains, and email through the qmailing public API.",
+  "type": "module",
+  "bin": {
+    "qmailing-mcp": "dist/server.js"
+  },
+  "main": "dist/server.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "qmailing",
+    "email",
+    "anthropic",
+    "claude",
+    "ai-tools"
+  ],
+  "author": "qmailing",
+  "license": "MIT",
+  "homepage": "https://qmailing.com/docs/mcp",
+  "bugs": {
+    "url": "https://qmailing.com/contact"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSameAbramovych/qmailing-mcp-server.git"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@vitest/coverage-v8": "^4.1.5",
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.5"
+  }
+}

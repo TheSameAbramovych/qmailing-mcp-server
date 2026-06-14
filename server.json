@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.qmailing/mcp-server",
+  "description": "AI agents read & send email, manage mailboxes, custom domains and webhooks via the QMailing public API.",
+  "version": "0.3.0",
+  "websiteUrl": "https://qmailing.com/docs/mcp",
+  "repository": {
+    "url": "https://github.com/TheSameAbramovych/qmailing-mcp-server",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@qmailing/mcp-server",
+      "version": "0.3.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "QMAILING_API_TOKEN",
+          "description": "API token from https://qmailing.com/settings/developers",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    { "type": "streamable-http", "url": "https://qmailing.com/mcp" }
+  ]
+}
