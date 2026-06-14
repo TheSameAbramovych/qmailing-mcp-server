@@ -2,7 +2,7 @@
   "name": "@qmailing/mcp-server",
   "version": "0.3.1",
   "mcpName": "com.qmailing/mcp-server",
-  "description": "Model Context Protocol server for qmailing — lets AI agents (Claude Desktop, Cursor, Continue, ...) read and modify mailboxes, custom domains, and email through the qmailing public API.",
+  "description": "Model Context Protocol server for QMailing — lets AI agents (Claude Desktop, Cursor, Continue, ...) read and modify mailboxes, custom domains, and email through the QMailing public API.",
   "type": "module",
   "bin": {
     "qmailing-mcp": "dist/server.js"

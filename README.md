@@ -1,6 +1,6 @@
-# qmailing — Model Context Protocol
+# QMailing — Model Context Protocol
 
-Two ways to plug an AI agent into qmailing — pick the one that matches
+Two ways to plug an AI agent into QMailing — pick the one that matches
 your client.
 
 | Client                          | Recommended setup                          |
@@ -29,17 +29,17 @@ and rotates refresh tokens automatically.
    ```
 3. Open Claude.ai → **Settings → Connectors → Add custom connector**.
 4. Paste the server URL into the form. Claude.ai redirects you back
-   to qmailing to sign in.
+   to QMailing to sign in.
 5. Approve the requested scopes (Read mailboxes / Send emails / etc.) —
    the consent screen lists each one with a description before you
    click **Allow**.
-6. Done. Claude.ai shows the qmailing tools in its tool tray on every
+6. Done. Claude.ai shows the QMailing tools in its tool tray on every
    chat.
 
 ### Revoking access
 
-- From Claude.ai: **Settings → Connectors → qmailing → Remove**.
-- From qmailing: signing out of every device (**Settings → Profile →
+- From Claude.ai: **Settings → Connectors → QMailing → Remove**.
+- From QMailing: signing out of every device (**Settings → Profile →
   Sign out everywhere**) invalidates outstanding tokens immediately.
 
 ### What scopes mean
@@ -57,7 +57,7 @@ Desktop, Cursor, Continue, Zed, and any CLI MCP client.
 
 ### Requirements
 
-- A qmailing account on the **PRO** tier or higher (the public API is gated on PRO+).
+- A QMailing account on the **PLUS** tier or higher (the public API is gated on PLUS+).
 - Node.js **18.17 or later**.
 
 ### Setup
@@ -106,7 +106,7 @@ claude mcp add qmailing -- npx -y @qmailing/mcp-server
 
 #### Cursor / Continue / Zed / others
 
-Any MCP client that supports stdio servers takes the same `command` + `args` + `env` shape. Restart the client after editing its config — the qmailing tools appear in the tools menu (the wrench icon in Claude Desktop, similar in others).
+Any MCP client that supports stdio servers takes the same `command` + `args` + `env` shape. Restart the client after editing its config — the QMailing tools appear in the tools menu (the wrench icon in Claude Desktop, similar in others).
 
 #### Local development checkout
 
@@ -154,10 +154,10 @@ npm run build       # produces dist/server.js
 
 ## Security notes
 
-- **The token authenticates as your full qmailing account** within the scopes you granted. Treat it like a password.
+- **The token authenticates as your full QMailing account** within the scopes you granted. Treat it like a password.
 - Tokens are revocable and the FE shows the prefix + last-used timestamp, so you can identify a compromised one and kill it from /settings/developers.
 - Plan downgrades disable existing tokens immediately — the API re-checks the plan on every request, no per-token revocation needed.
-- The MCP server runs locally on your machine; your token never leaves the process you launched. Only the qmailing API itself sees it.
+- The MCP server runs locally on your machine; your token never leaves the process you launched. Only the QMailing API itself sees it.
 
 ### Handling untrusted email content (prompt injection)
 
@@ -170,7 +170,7 @@ npm run build       # produces dist/server.js
 
 ## Development
 
-The package source is maintained in the qmailing monorepo. To work on it
+The package source is maintained in the QMailing monorepo. To work on it
 locally with a checkout, install deps inside the `mcp/` directory and
 build:
 
