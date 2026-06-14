@@ -72,7 +72,7 @@ Desktop, Cursor, Continue, Zed, and any CLI MCP client.
 
 #### 2. Wire it into your MCP client
 
-The package is published on the public npm registry under the **`beta`** tag — `npx` pulls it on first run, no manual checkout required.
+The package is published on the public npm registry — `npx` pulls the latest version on first run, no manual checkout required.
 
 #### Claude Desktop
 
@@ -95,7 +95,7 @@ Edit `claude_desktop_config.json`:
 }
 ```
 
-Pin a specific version (e.g. `@qmailing/mcp-server@0.1.1`) if you don't want auto-upgrades.
+Pin a specific version (e.g. `@qmailing/mcp-server@0.3.4`) if you don't want auto-upgrades.
 
 #### Claude Code
 
