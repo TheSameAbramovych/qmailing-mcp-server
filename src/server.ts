@@ -107,7 +107,7 @@ async function main() {
   const client = new QmailingClient({ token, baseUrl });
 
   const server = new Server(
-    { name: 'qmailing-mcp', version: '0.2.0' },
+    { name: 'qmailing-mcp', version: '0.3.5' },
     { capabilities: { tools: {} } },
   );
 

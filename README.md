@@ -95,7 +95,7 @@ Edit `claude_desktop_config.json`:
 }
 ```
 
-Pin a specific version (e.g. `@qmailing/mcp-server@0.3.4`) if you don't want auto-upgrades.
+Pin a specific version (e.g. `@qmailing/mcp-server@0.3.5`) if you don't want auto-upgrades.
 
 #### Claude Code
 

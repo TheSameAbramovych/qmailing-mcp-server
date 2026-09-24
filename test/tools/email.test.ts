@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { QmailingClient } from '../../src/client.js';
+import { QmailingApiError, QmailingClient } from '../../src/client.js';
 import {
   getAttachmentTool,
   getEmailTool,
@@ -202,5 +202,32 @@ describe('email tools', () => {
     // Missing Content-Disposition falls back to "download" rather than
     // surfacing a null filename to the LLM.
     expect(out.filename).toBe('download');
+  });
+
+  it('getAttachment returns a quarantined sentinel on 409 AttachmentQuarantined', async () => {
+    const client = fakeClient();
+    (client.getBytes as ReturnType<typeof vi.fn>).mockRejectedValueOnce(
+      new QmailingApiError(409, 'Attachment blocked for safety', 'AttachmentQuarantined'),
+    );
+
+    const out = await handleGetAttachment(client, { emailId: 'e', index: 1 });
+
+    expect(out).toEqual({ quarantined: true, message: 'Attachment blocked for safety' });
+  });
+
+  it.each([
+    ['another 409 code', new QmailingApiError(409, 'conflict', 'SomethingElse')],
+    ['a non-409 status', new QmailingApiError(404, 'not found', 'AttachmentQuarantined')],
+    ['a non-API error', new Error('network down')],
+  ])('getAttachment rethrows %s', async (_label, error) => {
+    const client = fakeClient();
+    (client.getBytes as ReturnType<typeof vi.fn>).mockRejectedValueOnce(error);
+
+    await expect(handleGetAttachment(client, { emailId: 'e', index: 0 })).rejects.toBe(error);
+  });
+
+  it('tool descriptions tell the agent about restricted content and quarantine', () => {
+    expect(getEmailTool.description).toContain('content_restricted');
+    expect(getAttachmentTool.description).toContain('quarantined: true');
   });
 });
